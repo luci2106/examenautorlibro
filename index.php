@@ -1,3 +1,18 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Biblioteca</title>
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #007bff; /* Azul */
+            color: #fff; /* Texto blanco */
+        }
+    </style>
+</head>
+
 <?php
 include 'conexion.php';
 
@@ -83,7 +98,7 @@ $sql = "SELECT idlibro, libro.titulo, autores.nombre, autores.apellido
 <form action="" method="post">
     <input type="text" name="nombre" placeholder="Nombre" required>
     <input type="text" name="apellido" placeholder="Apellido" required>
-    <button type="submit" name="add_author">Añadir Autor</button>
+    <button class="btn btn-success" type="submit" name="add_author">Añadir Autor</button>
 </form>
 
 <h2>Añadir Libro</h2>
@@ -95,7 +110,7 @@ $sql = "SELECT idlibro, libro.titulo, autores.nombre, autores.apellido
             <option value="<?php echo $row['idautores']; ?>"><?php echo $row['nombre'] . " " . $row['apellido']; ?></option>
         <?php endwhile; ?>
     </select>
-    <button type="submit" name="add_book">Añadir Libro</button>
+    <button class="btn btn-success" type="submit" name="add_book">Añadir Libro</button>
 </form>
 
 <h2>Lista de Libros</h2>
@@ -140,6 +155,6 @@ $sql = "SELECT idlibro, libro.titulo, autores.nombre, autores.apellido
     </tr>
     <?php endwhile; ?>
 </table>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
